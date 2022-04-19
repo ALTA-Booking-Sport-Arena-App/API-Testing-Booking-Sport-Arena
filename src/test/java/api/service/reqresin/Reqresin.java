@@ -9,11 +9,6 @@ public class Reqresin {
 
 
 
-    //GetUser single
-    public void getSingleUser (){
-        SerenityRest.get(REQRESIN_BASEURL + "/api/users/2");
-    }
-
     // Post Create
     public void postCreate () {
         JSONObject bodyJson = new JSONObject();
