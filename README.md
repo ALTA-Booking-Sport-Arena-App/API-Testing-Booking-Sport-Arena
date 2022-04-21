@@ -10,7 +10,8 @@
 
 * Browser
 > Google Chrome,
-> Microsoft Edge
+> Microsoft Edge,
+> Mozilla Firefox
 
 * Language Scenario,
 > Gerkin Language
@@ -21,5 +22,6 @@
 
 * Team
 > Agung firmansyah,
-> Ratna Khoirunnisa,
-> Ade Muhammad Abid
+> Andrian Prayoga
+> Ahmad Nabawi
+> Muhammad Teguh Pratama
