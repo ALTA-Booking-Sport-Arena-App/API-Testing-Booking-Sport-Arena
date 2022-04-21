@@ -22,6 +22,6 @@
 
 * Team
 > Agung firmansyah,
-> Andrian Prayoga
-> Ahmad Nabawi
+> Andrian Prayoga,
+> Ahmad Nabawi,
 > Muhammad Teguh Pratama
