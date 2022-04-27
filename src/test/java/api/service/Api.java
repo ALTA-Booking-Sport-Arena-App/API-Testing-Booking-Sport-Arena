@@ -5,12 +5,61 @@ import net.serenitybdd.rest.SerenityRest;
 import org.json.JSONObject;
 import org.junit.Assert;
 
-import javax.swing.*;
-import java.io.File;
-
 public class Api {
 
     private static final String API_BASEURL = "https://haudhi.site";
+
+    //Start -- Login
+    public void postLoginSuccessfully(){
+        JSONObject bodyJson = new JSONObject();
+
+        bodyJson.put("email",  "admin@admin.com");
+        bodyJson.put("password", "admin");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJson.toString())
+                .post(API_BASEURL + "/login");
+    }
+    public void postLoginwithoutEmail(){
+        JSONObject bodyJson = new JSONObject();
+
+        bodyJson.put("email",  "");
+        bodyJson.put("password", "admin");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJson.toString())
+                .post(API_BASEURL + "/login");
+    }
+    public void postLoginwithoutPassword(){
+        JSONObject bodyJson = new JSONObject();
+
+        bodyJson.put("email",  "admin@admin.com");
+        bodyJson.put("password", "");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJson.toString())
+                .post(API_BASEURL + "/login");
+    }
+    public void postLoginwithoutBodyRequest(){
+        SerenityRest.given()
+                .header("Content-type","application/json")
+                .post(API_BASEURL + "/login");
+    }
+    public void postLoginwithAccountDontRegister(){
+        JSONObject bodyJson = new JSONObject();
+
+        bodyJson.put("email",  "anon");
+        bodyJson.put("password", "anonpass");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJson.toString())
+                .post(API_BASEURL + "/login");
+    }
+    //End -- Login
 
     //Start -- Register
     public void postRegisterSuccess(){
