@@ -8,9 +8,9 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 public class ApiStepDef {
     Api api = new Api();
 
-    //Action -- Begin
+    //Action To Step Dev -- Begin
 
-    //Register
+    //Start -- Register
     @When("user send user send POST success register request to server")
     public void postRegisterSuccess() {
         api.postRegisterSuccess();
@@ -31,8 +31,50 @@ public class ApiStepDef {
     public void postRegisterwithRegisteredEmail() {
         api.postRegisterwithRegisteredEmail();
     }
+    //End -- Register
 
-    //Action -- End
+    //Start -- Users Profile
+    @When("user send PUT successfully user profile in server")
+    public void PutUserSuccessfully() {
+        api.PutUserSuccessfully();
+    }
+
+    @When("user send PUT unsuccessfully user profile in server")
+    public void PutUserUnsuccessfully() {
+        api.PutUserUnsuccessfully();
+    }
+
+    @When("user send GET single user successfully user profile in server")
+    public void GetSingleUserSuccessfully() {
+        api.GetSingleUserSuccessfully();
+    }
+    @When("user send GET single user unsuccessfully user profile in server")
+    public void GetSingleUserUnsuccessfully() {
+        api.GetSingleUserUnsuccessfully();
+
+    }
+
+    @When("user send DELETE user successfully user profile in server")
+    public void DeleteUserSuccessfully() {
+        api.DeleteUserSuccessfully ();
+
+    }
+
+    @When("user send DELETE user unsuccessfully user profile in server")
+    public void DeleteUserUnsuccessfully() {
+        api.DeleteUserUnsuccessfully();
+
+    }
+
+    @When("user send PUT update image user unsuccessfully user profile in server")
+    public void PutUpdateImage() {
+        api.PutUpdateImage();
+    }
+    //End -- User Profile
+
+    //Action To Step Dev -- End
+
+
 
     //Validation -- Begin
     @Then("response status code should be {int}")
