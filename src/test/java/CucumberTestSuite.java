@@ -6,6 +6,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         features = "classpath:features"
-        //features = "src/test/resources/feature/reqresin"
+        //features = "src/test/resources/features"
 )
 public class CucumberTestSuite {}

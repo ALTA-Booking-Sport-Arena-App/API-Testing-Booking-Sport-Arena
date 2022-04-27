@@ -10,6 +10,28 @@ public class ApiStepDef {
 
     //Action -- Begin
 
+    //Register
+    @When("user send user send POST success register request to server")
+    public void postRegisterSuccess() {
+        api.postRegisterSuccess();
+    }
+    @When("user send POST register without password request to server")
+    public void postRegisterwithoutPassword() {
+        api.postRegisterwithoutPassword();
+    }
+    @When("user send POST register without fullname request to server")
+    public void postRegisterwithoutFullname() {
+        api.postRegisterwithoutFullname();
+    }
+    @When("user send POST register without body request to server")
+    public void postRegisterwithoutBody() {
+        api.postRegisterwithoutBody();
+    }
+    @When("user send POST register with registered email request to server")
+    public void postRegisterwithRegisteredEmail() {
+        api.postRegisterwithRegisteredEmail();
+    }
+
     //Action -- End
 
     //Validation -- Begin
