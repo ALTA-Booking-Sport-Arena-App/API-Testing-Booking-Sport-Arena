@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data_user": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "CreatedAt": {
+          "type": "string"
+        },
+        "UpdatedAt": {
+          "type": "string"
+        },
+        "fullname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "bussiness_name": {
+          "type": "string"
+        },
+        "bussiness_type": {
+          "type": "string"
+        },
+        "bussiness_terms": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ID",
+        "CreatedAt",
+        "UpdatedAt",
+        "fullname",
+        "username",
+        "email",
+        "phone_number",
+        "bussiness_name",
+        "bussiness_type",
+        "bussiness_terms"
+      ]
+    },
+    "code": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data_user",
+    "code",
+    "message"
+  ]
+}
