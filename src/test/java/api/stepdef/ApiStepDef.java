@@ -1,12 +1,37 @@
 package api.stepdef;
 
-import api.service.Api;
+import api.service.*;
 import io.cucumber.java.en.*;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class ApiStepDef {
     Api api = new Api();
+
+    //Action To Step Dev -- Begin
+
+    //Start -- Login
+    @When("user send POST success login request to server")
+    public void postLoginSuccessfully(){
+        api.postLoginSuccessfully();
+    }
+    @When("user send POST login without email request to server")
+    public void postLoginwithoutEmail(){
+        api.postLoginwithoutEmail();
+    }
+    @When("user send POST login without password request to server")
+    public void postLoginwithoutPassword(){
+        api.postLoginwithoutPassword();
+    }
+    @When("user send POST login without body request to server")
+    public void postLoginwithoutBodyRequest(){
+        api.postLoginwithoutBodyRequest();
+    }
+    @When("user send POST login with account dont register request to server")
+    public void postLoginwithAccountDontRegister(){
+        api.postLoginwithAccountDontRegister();
+    }
+    //End -- Login
 
     //Action To Step Dev -- Begin
 
