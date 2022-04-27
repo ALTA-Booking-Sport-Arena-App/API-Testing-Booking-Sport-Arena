@@ -125,7 +125,8 @@ public class Api {
     }
 
     public void PutUpdateImage (){
-        SerenityRest.put(API_BASEURL + "/users/images");
+        SerenityRest.put(API_BASEURL + "/users/image/");
     }
+    //End -- Users Profile
 
 }
