@@ -85,12 +85,6 @@ public class ApiStepDef {
 
     }
 
-    @When("user send DELETE user unsuccessfully user profile in server")
-    public void DeleteUserUnsuccessfully() {
-        api.DeleteUserUnsuccessfully();
-
-    }
-
     @When("user send PUT update image user unsuccessfully user profile in server")
     public void PutUpdateImage() {
         api.PutUpdateImage();
