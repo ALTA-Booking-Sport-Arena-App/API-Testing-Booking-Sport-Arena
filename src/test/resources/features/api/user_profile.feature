@@ -31,7 +31,7 @@ Feature: User Profile
     Then response status code should be 200
 
   @negative
-  Scenario: DELETE user successfully
+  Scenario: DELETE user unsuccessfully
     When user send DELETE user unsuccessfully user profile in server
     Then response status code should be 400
 

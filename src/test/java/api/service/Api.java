@@ -65,11 +65,11 @@ public class Api {
     public void postRegisterSuccess(){
         JSONObject bodyJson = new JSONObject();
 
-        bodyJson.put("fullname", "Ahmad Sudrajat");
-        bodyJson.put("username", "Sudrajat90");
-        bodyJson.put("email", "sudrajat90@email.com");
-        bodyJson.put("phone_number", "081333555888");
-        bodyJson.put("password", "drajat90");
+        bodyJson.put("fullname", "Andre Taulani");
+        bodyJson.put("username", "Andre13");
+        bodyJson.put("email", "andre13@email.com");
+        bodyJson.put("phone_number", "081333555666");
+        bodyJson.put("password", "andre13");
 
         SerenityRest.given()
                 .header("Content-type","application/json")
@@ -105,8 +105,19 @@ public class Api {
                 .post(API_BASEURL + "/users");
     }
     public void postRegisterwithoutBody(){
+        JSONObject bodyJson = new JSONObject();
+
+        bodyJson.put("fullname", "");
+        bodyJson.put("username", "");
+        bodyJson.put("email", "");
+        bodyJson.put("phone_number", "");
+        bodyJson.put("password", "");
+
+
+
         SerenityRest.given()
                 .header("Content-type","application/json")
+                .body(bodyJson.toString())
                 .post(API_BASEURL + "/users");
     }
     public void postRegisterwithRegisteredEmail(){
@@ -114,7 +125,7 @@ public class Api {
 
         bodyJson.put("fullname", "Sudrajat Dwi");
         bodyJson.put("username", "Sudrajat-D");
-        bodyJson.put("email", "sudrajat90@email.com");
+        bodyJson.put("email", "andre13@email.com");
         bodyJson.put("phone_number", "081333555777");
         bodyJson.put("password", "drajat12");
 
