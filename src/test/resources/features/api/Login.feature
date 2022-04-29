@@ -1,7 +1,7 @@
 @login
 Feature: Login
 
-  @positive
+  @loginpositive
   Scenario: POST User Login Successfully
     When user send POST success login request to server
     Then response status code should be 200

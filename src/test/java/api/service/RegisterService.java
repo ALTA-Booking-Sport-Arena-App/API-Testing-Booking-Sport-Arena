@@ -1,9 +1,7 @@
 package api.service;
-import io.restassured.response.Response;
+
 import net.serenitybdd.rest.SerenityRest;
-import org.aspectj.weaver.patterns.IToken;
 import org.json.JSONObject;
-import org.junit.Assert;
 public class RegisterService {
     private static final String API_BASEURL = "https://haudhi.site";
     
