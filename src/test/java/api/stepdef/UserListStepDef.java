@@ -3,6 +3,13 @@ import api.service.*;
 import io.cucumber.java.en.*;
 public class UserListStepDef {
     UserListService userList = new UserListService();
+
+    String tokenGenerated;
+
+    @Given("user has already had login token")
+    public void GetTokenLogin()throws Exception{
+        this.tokenGenerated = userList.GetTokenLogin();
+    }
     //Start -- Users Profile
     @When("user send PUT successfully user profile in server")
     public void PutUserSuccessfully() {
@@ -16,7 +23,8 @@ public class UserListStepDef {
 
     @When("user send GET single user successfully user profile in server")
     public void GetSingleUserSuccessfully() {
-        userList.GetSingleUserSuccessfully();
+        System.out.println(tokenGenerated);
+        userList.GetSingleUserSuccessfully(tokenGenerated);
     }
     @When("user send GET single user unsuccessfully user profile in server")
     public void GetSingleUserUnsuccessfully() {

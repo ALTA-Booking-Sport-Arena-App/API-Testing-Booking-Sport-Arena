@@ -1,4 +1,5 @@
 package api.service;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.JSONObject;
@@ -6,6 +7,22 @@ import org.junit.Assert;
 public class UserListService {
 
     private static final String API_BASEURL = "https://haudhi.site";
+
+    public String GetTokenLogin(){
+        JSONObject bodyJson = new JSONObject();
+
+        bodyJson.put("email",  "andre13@email.com");
+        bodyJson.put("password", "andre13");
+
+        Response response = (Response) SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJson.toString())
+                .post(API_BASEURL + "/login");
+        String jsonString = response.getBody().asString();
+
+        return JsonPath.from(jsonString).get("data.token");
+    }
+
     //Start -- Users Profile
     public void PutUserSuccessfully (){
         JSONObject bodyJson = new JSONObject();
@@ -36,12 +53,10 @@ public class UserListService {
                 .put(API_BASEURL + "/users/2");
     }
 
-    public void GetSingleUserSuccessfully(){
-        JSONObject bodyJson = new JSONObject();
-        bodyJson.put("email","andre13@email.com");
+    public void GetSingleUserSuccessfully(String token){
 
         SerenityRest.given()
-                .body(bodyJson.toString())
+                .header("Authorization","Bearer "+token)
                 .get(API_BASEURL + "/users/profile");
     }
 
