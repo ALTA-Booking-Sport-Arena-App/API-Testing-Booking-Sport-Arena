@@ -1,6 +1,9 @@
 @UserProfile
 Feature: User Profile
 
+  Background: user already login
+    Given user has already had login token
+
   @Put_positive
   Scenario: PUT update user successfully
     When user send PUT successfully user profile in server
@@ -13,7 +16,7 @@ Feature: User Profile
     Then response status code should be 400
     And response structure should match json schema "userProfileUnsuccessfully.json"
 
-  @Get_positive
+  @Get_User_positive
   Scenario: GET single user successfully
     When user send GET single user successfully user profile in server
     Then response status code should be 200

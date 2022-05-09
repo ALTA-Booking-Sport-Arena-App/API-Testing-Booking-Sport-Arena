@@ -14,18 +14,12 @@ public class LoginService {
         bodyJson.put("email",  "andre13@email.com");
         bodyJson.put("password", "andre13");
 
-//        Response user = SerenityRest.lastResponse()
-//                .jsonPath()
-//                .getObject("data", Response.class);
-
         Response response = (Response) SerenityRest.given()
                 .header("Content-type", "application/json")
                 .body(bodyJson.toString())
-                .post(API_BASEURL + "/login")
-                .getBody();
-
-        System.out.println(response);
+                .post(API_BASEURL + "/login");
     }
+
     public void postLoginwithoutEmail(){
         JSONObject bodyJson = new JSONObject();
 
