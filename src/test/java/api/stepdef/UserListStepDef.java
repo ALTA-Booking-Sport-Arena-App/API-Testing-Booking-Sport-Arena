@@ -6,6 +6,7 @@ public class UserListStepDef {
 
     String tokenGenerated;
 
+    //get value token input in variable tokenGenerated
     @Given("user has already had login token")
     public void GetTokenLogin()throws Exception{
         this.tokenGenerated = userList.GetTokenLogin();
@@ -21,9 +22,9 @@ public class UserListStepDef {
         userList.PutUserUnsuccessfully();
     }
 
+    //panggil method dengan param token
     @When("user send GET single user successfully user profile in server")
     public void GetSingleUserSuccessfully() {
-        System.out.println(tokenGenerated);
         userList.GetSingleUserSuccessfully(tokenGenerated);
     }
     @When("user send GET single user unsuccessfully user profile in server")
