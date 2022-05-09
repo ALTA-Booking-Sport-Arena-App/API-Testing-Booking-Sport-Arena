@@ -8,6 +8,7 @@ public class UserListService {
 
     private static final String API_BASEURL = "https://haudhi.site";
 
+    //login dan return value data token
     public String GetTokenLogin(){
         JSONObject bodyJson = new JSONObject();
 
@@ -53,6 +54,7 @@ public class UserListService {
                 .put(API_BASEURL + "/users/2");
     }
 
+    //send perintah get dengan Authorization Bearer + token
     public void GetSingleUserSuccessfully(String token){
 
         SerenityRest.given()
