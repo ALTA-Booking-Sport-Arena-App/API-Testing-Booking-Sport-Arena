@@ -14,7 +14,7 @@ public class UserListStepDef {
     //Start -- Users Profile
     @When("user send PUT successfully user profile in server")
     public void PutUserSuccessfully() {
-        userList.PutUserSuccessfully();
+        userList.PutUserSuccessfully(tokenGenerated);
     }
 
     @When("user send PUT unsuccessfully user profile in server")
@@ -25,6 +25,7 @@ public class UserListStepDef {
     //panggil method dengan param token
     @When("user send GET single user successfully user profile in server")
     public void GetSingleUserSuccessfully() {
+
         userList.GetSingleUserSuccessfully(tokenGenerated);
     }
     @When("user send GET single user unsuccessfully user profile in server")

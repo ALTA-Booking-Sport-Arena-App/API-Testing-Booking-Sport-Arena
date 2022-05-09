@@ -1,4 +1,5 @@
 package api.service;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
@@ -12,7 +13,7 @@ public class UserListService {
     public String GetTokenLogin(){
         JSONObject bodyJson = new JSONObject();
 
-        bodyJson.put("email",  "andre13@email.com");
+        bodyJson.put("email",  "andre113@email.com");
         bodyJson.put("password", "andre13");
 
         Response response = (Response) SerenityRest.given()
@@ -25,19 +26,21 @@ public class UserListService {
     }
 
     //Start -- Users Profile
-    public void PutUserSuccessfully (){
-        JSONObject bodyJson = new JSONObject();
+    public void PutUserSuccessfully (String token){
+        if (token.equalsIgnoreCase("null")){
+            System.out.println("token is null");
+        }
+        else {
+            JSONObject bodyJson = new JSONObject();
 
-        bodyJson.put("fullname", "admin barusan selesai");
-        bodyJson.put("username", "admin");
-        bodyJson.put("email", "andre13@email.com.com");
-        bodyJson.put("phone_number", "0123456789");
-        bodyJson.put("password", "andre13");
+            bodyJson.put("fullname", "admin belom selesai");
 
-        SerenityRest.given()
-                .header("Content-type","application/json")
-                .body(bodyJson.toString())
-                .put(API_BASEURL + "/users/2");
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .header("Content-type", "application/json")
+                    .body(bodyJson.toString())
+                    .put(API_BASEURL + "/users/32");
+        }
     }
 
     public void PutUserUnsuccessfully (){
