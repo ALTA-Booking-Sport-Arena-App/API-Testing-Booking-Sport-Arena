@@ -2,27 +2,35 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "fullname": {
-      "type": "string"
+    "code": {
+      "type": "integer"
     },
-    "username": {
-      "type": "string"
+    "data": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "id",
+        "name"
+      ]
     },
-    "email": {
-      "type": "string"
-    },
-    "phone_number": {
-      "type": "string"
-    },
-    "password": {
+    "message": {
       "type": "string"
     }
   },
   "required": [
-    "fullname",
-    "username",
-    "email",
-    "phone_number",
-    "password"
+    "code",
+    "data",
+    "message"
   ]
 }
