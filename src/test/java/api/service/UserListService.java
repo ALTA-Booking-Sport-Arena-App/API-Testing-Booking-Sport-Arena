@@ -27,10 +27,7 @@ public class UserListService {
 
     //Start -- Users Profile
     public void PutUserSuccessfully (String token){
-        if (token.equalsIgnoreCase("null")){
-            System.out.println("token is null");
-        }
-        else {
+        if (token != null){
             JSONObject bodyJson = new JSONObject();
 
             bodyJson.put("fullname", "admin belom selesai");
