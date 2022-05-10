@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "venue_id": {
+      "type": "integer"
+    },
+    "day": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "open_hour": {
+      "type": "string"
+    },
+    "close_hour": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "facility_id": {
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        }
+      ]
+    }
+  },
+  "required": [
+    "venue_id",
+    "day",
+    "open_hour",
+    "close_hour",
+    "price",
+    "facility_id"
+  ]
+}
