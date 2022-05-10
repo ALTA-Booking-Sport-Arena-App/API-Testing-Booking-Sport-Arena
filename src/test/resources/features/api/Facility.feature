@@ -31,7 +31,7 @@ Feature: Facility
     Then response status code should be 200
     And response structure should match json schema "putFscilitySuccess.json"
 
-  @put-positive-facility
+  @put-negative-facility
   Scenario: PUT Update Facility Unsuccessfully
     When user send PUT unsuccessfully update facility request to server
     Then response status code should be 400
