@@ -19,7 +19,7 @@ public class UserListStepDef {
 
     @When("user send PUT unsuccessfully user profile in server")
     public void PutUserUnsuccessfully() {
-        userList.PutUserUnsuccessfully();
+        userList.PutUserUnsuccessfully(tokenGenerated);
     }
 
     //panggil method dengan param token
@@ -30,20 +30,20 @@ public class UserListStepDef {
     }
     @When("user send GET single user unsuccessfully user profile in server")
     public void GetSingleUserUnsuccessfully() {
-        userList.GetSingleUserUnsuccessfully();
+        userList.GetSingleUserUnsuccessfully(tokenGenerated);
 
     }
 
     @When("user send DELETE user successfully user profile in server")
     public void DeleteUserSuccessfully() {
-        userList.DeleteUserSuccessfully ();
+        userList.DeleteUserSuccessfully (tokenGenerated);
 
     }
 
 
     @When("user send PUT update image user unsuccessfully user profile in server")
     public void PutUpdateImage() {
-        userList.PutUpdateImage();
+        userList.PutUpdateImage(tokenGenerated);
     }
     //End -- User Profile
 

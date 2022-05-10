@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "facility": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "icon_name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "icon_name"
+              ]
+            }
+          ]
+        },
+        "category": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "icon_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "icon_name"
+          ]
+        },
+        "operational_hours": {
+          "type": "array",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "open_hour": {
+              "type": "string"
+            },
+            "close_hour": {
+              "type": "string"
+            },
+            "price": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "open_hour",
+            "close_hour",
+            "price"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "image",
+        "address",
+        "city",
+        "facility",
+        "category",
+        "operational_hours"
+      ]
+    },
+    "code": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "code",
+    "message"
+  ]
+}
